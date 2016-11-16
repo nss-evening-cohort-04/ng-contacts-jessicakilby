@@ -10,17 +10,39 @@
 </head>
 <body ng-app="ContactApp">
 
-	<div id="contact-container">
+	<div ng-controller="contactCtrl">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<button class="btn btn-default btn-primary" ng-click="allContactView()">All Contact View</button>
+				<button class="btn btn-default btn-success" ng-click="addContactView()">Add New Contact View</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div ng-show="showListView">
+					<h3>Show List View</h3>
+
+				</div>
+				<div id="form-container" ng-show="!showListView">
+					<h3>Add Contact View</h3>
+					<form>
+						<input class="form-control" type="text" id="name" placeholder="Name">
+					    <input class="form-control" type="text" id="phone" placeholder="Phone">
+					    <input class="form-control" type="text" id="address" placeholder="Address">
+					    <input class="form-control" type="text" id="email" placeholder="Email">
+					    <button type="submit" class="btn btn-success" id="submit-contact" data-loading-text="<i class='fa fa-circle-o-notch fa-spin' aria-hidden='true'></i>" ng-click="submitContactBtn">Submit New Contact</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div id="contact-container">
 		<div class="panel panel-default search-bar col-xs-offset-3">
 			<div class="panel-body">
-			    <input class="form-control" type="text" id="name" placeholder="Name">
-			    <input class="form-control" type="text" id="phone" placeholder="Phone">
-			    <input class="form-control" type="text" id="address" placeholder="Address">
-			    <input class="form-control" type="text" id="email" placeholder="Email">
-			    <button type="submit" class="btn btn-primary btn-lg" id="add-contact" data-loading-text="<i class='fa fa-circle-o-notch fa-spin' aria-hidden='true'></i>">Add New Contact</button>
+			    
 		  </div>
 		</div>
-	</div>	
+	</div> -->	
 
 
 	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script> <!-- firebase -->
