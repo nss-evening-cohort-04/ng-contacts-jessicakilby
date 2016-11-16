@@ -1,3 +1,5 @@
 "use strict";
 
-console.log("contactConfig.js here");
+contact.run(function(FIREBASE_CONFIG){
+	firebase.initializeApp(FIREBASE_CONFIG);
+});

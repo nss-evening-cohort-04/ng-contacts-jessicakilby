@@ -1,0 +1,8 @@
+body {
+  background-color: teal; }
+  body h1 {
+    text-align: center; }
+
+#contact-container {
+  padding-left: 25%;
+  padding-right: 25%; }

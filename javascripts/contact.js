@@ -1,3 +1,5 @@
 "use strict";
 
-console.log("contact.js here");
+var contact = angular.module("ContactApp", []);
+
+// ng-app="ContactApp" in <body>
