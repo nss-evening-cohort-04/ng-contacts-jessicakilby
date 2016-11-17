@@ -15,20 +15,23 @@ contact.controller("contactCtrl", function($scope, contactFactory){
 	getContacts();
 
 	$scope.allContactView = function(){
-		console.log("all the contacts here");
 		$scope.showListView = true;
 	};
 	$scope.addContactView = function(){
-		console.log("you want to add a contact");
 		$scope.showListView = false;
 	};
 	$scope.submitNewContact = function(){
-		console.log("submit button for form");
 		contactFactory.postContacts($scope.newContact).then(function(){
 			getContacts();
 			$scope.newContact = {};
 			$scope.showListView = true;
-		})
+		});
+	};
+	$scope.editContacts = function(){
+		console.log("edit button linked");
+	};
+	$scope.deleteContacts = function(){
+		console.log("delete button linked");
 	};
 
 });

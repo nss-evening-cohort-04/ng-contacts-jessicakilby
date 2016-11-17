@@ -4,6 +4,8 @@
 	<title>ng-contacts-jk</title>
 	<!-- font awesome -->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<!-- bootstrap -->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -21,12 +23,24 @@
 			<div class="col-sm-8 col-sm-offset-2">
 				<div ng-show="showListView">
 					<h3>My Contacts</h3>
+					<div class="container" >
+						<div class="contact_container" id="label">
+							<div class="name">Name</div>
+							<div class="phone">Phone</div>
+							<div class="address">Address</div>
+							<div class="email">Email</div>
+						</div>
+					</div>
 					<div class="container">
-						<div class="contact_container col-lg-6 col-lg-4" ng-repeat="contact in contacts">
+						<div class="contact_container" ng-repeat="contact in contacts">
 							<div class="name">{{contact.name}}</div>
 							<div class="phone">{{contact.phone}}</div>
 							<div class="address">{{contact.address}}</div>
 							<div class="email">{{contact.email}}</div>
+							<div class="editDeleteButton">
+								<button class="edit btn btn-warning" ng-click="editContacts()"><i class="material-icons">edit</i></button>
+								<button class="delete btn btn-danger" ng-click="deleteContacts()"><i class="material-icons">delete</i></button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -43,7 +57,7 @@
 					    <input class="form-control" type="text" id="phone" placeholder="Phone" ng-model="newContact.phone">
 					    <input class="form-control" type="text" id="address" placeholder="Address" ng-model="newContact.address">
 					    <input class="form-control" type="text" id="email" placeholder="Email" ng-model="newContact.email">
-					    <button type="submit" class="btn btn-success" id="submit-contact" data-loading-text="<i class='fa fa-circle-o-notch fa-spin' aria-hidden='true'></i>" ng-click="submitNewContact()">Submit New Contact</button>
+					    <button type="submit" class="btn btn-success" id="submit-contact" ng-click="submitNewContact()">Submit New Contact</button>
 					</form>
 				</div>
 			</div>

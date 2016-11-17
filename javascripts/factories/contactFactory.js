@@ -25,13 +25,28 @@ contact.factory("contactFactory", function($q, $http, FIREBASE_CONFIG){
 				phone: newContact.phone,
 				address: newContact.address,
 				email: newContact.email
-			})).success(function(postResponse){
+				})
+			).success(function(postResponse){
 				resolve(postResponse);
 			}).error(function(postError){
 				reject(postError);
 			});
 		});
 	};
+
+	// var deleteContacts = function(){
+	// 	console.log("delete button working");
+		// return $q((resolve, reject)=>{
+		// 	$http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts.json`)
+		// 	.success(function(deleteResponse){
+		// 		resolve(deleteResponse);
+		// 	}).error(function(deleteError){
+		// 		reject(deleteError);
+		// 	});
+		// });
+	// };
+
+	
 
 	return {getContactFB:getContactFB, postContacts};
 });

@@ -14,15 +14,35 @@ body {
   border: 1px solid black;
   border-radius: 20px;
   padding: 5px;
-  width: 250px;
-  margin-top: 80px;
+  width: 900px;
   display: inline-block; }
+
+#label {
+  font-weight: bold;
+  font-size: 1.3em;
+  background-color: #2F97C1; }
 
 .name,
 .phone,
 .address,
-.email {
-  text-align: center; }
+.email,
+.editDeleteButton {
+  text-align: center;
+  display: inline-block; }
 
 .name {
   font-weight: bold; }
+
+.phone,
+.name {
+  width: 120px; }
+
+.address {
+  width: 250px; }
+
+.email {
+  width: 200px; }
+
+.editDeleteButton {
+  float: right;
+  padding-right: 10px; }
