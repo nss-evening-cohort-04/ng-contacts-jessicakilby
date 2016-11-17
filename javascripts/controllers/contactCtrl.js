@@ -25,7 +25,7 @@ contact.controller("contactCtrl", function($scope, contactFactory){
 	$scope.submitNewContact = function(){
 		console.log("submit button for form");
 		
-	}; //not working
+	};
 
 });
 

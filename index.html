@@ -22,9 +22,20 @@
 				<div ng-show="showListView">
 					<h3>Show List View</h3>
 					<div>
-						<div></div>
+						<div ng-repeat="contact in contacts">
+							<div class="col-xs-6 col-sm-4">{{contact.name}}</div>
+							<div class="col-xs-6 col-sm-4">{{contact.phone}}</div>
+							<div class="col-xs-6 col-sm-4"{{contact.address}}></div>
+							<div class="col-xs-6 col-sm-4">{{contact.email}}</div>
+						</div>
 					</div>
 				</div>
+
+				<!-- name: newContact.name,
+				phone: newContact.phone,
+				address: newContact.address,
+				email: newContact.email -->
+
 				<div id="form-container" ng-show="!showListView">
 					<h3>Add Contact View</h3>
 					<form>
