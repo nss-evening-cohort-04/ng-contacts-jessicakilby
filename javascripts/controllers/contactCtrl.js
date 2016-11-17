@@ -8,7 +8,7 @@ contact.controller("contactCtrl", function($scope, contactFactory){
 
 	var getContacts = function(){
 		contactFactory.getContactFB().then(function(contactsFB){
-			console.log("items from fb", contactsFB);
+			console.log("contacts from fb", contactsFB);
 			$scope.contacts = contactsFB;
 		});
 	};
@@ -32,6 +32,10 @@ contact.controller("contactCtrl", function($scope, contactFactory){
 	};
 	$scope.deleteContacts = function(){
 		console.log("delete button linked");
+		contactFactory.deleteContactsFB().then(function(contactsFB){
+			console.log("new contacts from fb", contactsFB);
+			$scope.contacts = contactsFB;
+		});
 	};
 
 });

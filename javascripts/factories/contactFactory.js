@@ -34,21 +34,21 @@ contact.factory("contactFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	// var deleteContacts = function(){
-	// 	console.log("delete button working");
-		// return $q((resolve, reject)=>{
-		// 	$http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts.json`)
-		// 	.success(function(deleteResponse){
-		// 		resolve(deleteResponse);
-		// 	}).error(function(deleteError){
-		// 		reject(deleteError);
-		// 	});
-		// });
-	// };
+	var deleteContactsFB = function(){
+		console.log("delete button working");
+		return $q((resolve, reject)=>{
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts.json`)
+			.success(function(deleteResponse){
+				resolve(deleteResponse);
+			}).error(function(deleteError){
+				reject(deleteError);
+			});
+		});
+	};
 
 	
 
-	return {getContactFB:getContactFB, postContacts};
+	return {getContactFB:getContactFB, postContacts, deleteContactsFB};
 });
 
 //Factory: ability to use other services (have dependencies), service initialization, delayed/lazy initialization
