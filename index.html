@@ -12,7 +12,7 @@
 
 	<div ng-controller="contactCtrl">
 		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-sm-6 col-sm-offset-3 top-buttons">
 				<button class="btn btn-large col-sm-6 btn-primary" ng-click="allContactView()">All Contact View</button>
 				<button class="btn btn-large col-sm-6 btn-success" ng-click="addContactView()">Add New Contact View</button>
 			</div>
@@ -20,7 +20,7 @@
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
 				<div ng-show="showListView">
-					<h3>Show List View</h3>
+					<h3>My Contacts</h3>
 					<div class="container">
 						<div class="contact_container col-lg-6 col-lg-4" ng-repeat="contact in contacts">
 							<div class="name">{{contact.name}}</div>
@@ -37,7 +37,7 @@
 				email: newContact.email -->
 
 				<div id="form-container" ng-show="!showListView">
-					<h3>Add Contact View</h3>
+					<h3>Add Contact</h3>
 					<form>
 						<input class="form-control" type="text" id="name" placeholder="Name" ng-model="newContact.name">
 					    <input class="form-control" type="text" id="phone" placeholder="Phone" ng-model="newContact.phone">

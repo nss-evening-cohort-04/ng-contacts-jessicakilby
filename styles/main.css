@@ -3,6 +3,9 @@ body {
   body h1, body h3 {
     text-align: center; }
 
+.top-buttons {
+  margin-top: 10px; }
+
 #form-container {
   padding: 0 25%; }
 

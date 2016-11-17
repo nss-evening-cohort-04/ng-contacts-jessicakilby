@@ -24,7 +24,11 @@ contact.controller("contactCtrl", function($scope, contactFactory){
 	};
 	$scope.submitNewContact = function(){
 		console.log("submit button for form");
-		
+		contactFactory.postContacts($scope.newContact).then(function(){
+			getContacts();
+			$scope.newContact = {};
+			$scope.showListView = true;
+		})
 	};
 
 });

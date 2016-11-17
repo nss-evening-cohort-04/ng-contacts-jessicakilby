@@ -18,7 +18,7 @@ contact.factory("contactFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	var postContacts = function(){
+	var postContacts = function(newContact){
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`, JSON.stringify({
 				name: newContact.name,
