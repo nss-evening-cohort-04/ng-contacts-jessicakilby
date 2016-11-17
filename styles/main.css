@@ -1,6 +1,6 @@
 body {
   background-color: teal; }
-  body h1 {
+  body h1, body h3 {
     text-align: center; }
 
 #form-container {
