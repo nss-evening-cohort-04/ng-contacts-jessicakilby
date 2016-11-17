@@ -8,3 +8,24 @@ body {
 #form-container {
 	padding: 0 25%;
 }
+
+.contact_container{
+	background-color: lightblue;
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 5px;
+	width: 250px;
+	margin-top: 80px;
+	display: inline-block;
+}
+
+.name, 
+.phone,
+.address,
+.email {
+	text-align: center;
+}
+
+.name {
+	font-weight: bold;
+}

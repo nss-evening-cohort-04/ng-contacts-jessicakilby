@@ -21,12 +21,12 @@
 			<div class="col-sm-8 col-sm-offset-2">
 				<div ng-show="showListView">
 					<h3>Show List View</h3>
-					<div>
-						<div ng-repeat="contact in contacts">
-							<div class="col-xs-6 col-sm-4">{{contact.name}}</div>
-							<div class="col-xs-6 col-sm-4">{{contact.phone}}</div>
-							<div class="col-xs-6 col-sm-4"{{contact.address}}></div>
-							<div class="col-xs-6 col-sm-4">{{contact.email}}</div>
+					<div class="container">
+						<div class="contact_container col-lg-6 col-lg-4" ng-repeat="contact in contacts">
+							<div class="name">{{contact.name}}</div>
+							<div class="phone">{{contact.phone}}</div>
+							<div class="address">{{contact.address}}</div>
+							<div class="email">{{contact.email}}</div>
 						</div>
 					</div>
 				</div>
