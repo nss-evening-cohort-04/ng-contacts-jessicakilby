@@ -32,10 +32,11 @@ contact.controller("contactCtrl", function($scope, contactFactory){
 	};
 	$scope.deleteContacts = function(){
 		console.log("delete button linked");
-		contactFactory.deleteContactsFB().then(function(contactsFB){
-			console.log("new contacts from fb", contactsFB);
-			$scope.contacts = contactsFB;
-		});
+		// let contact = $(this).data;
+		// console.log("this", contact);
+		// contactFactory.deleteContactsFB(contact).then(function(contactsFB){
+		// 	$scope.contacts = contactsFB;
+		// });
 	};
 
 });

@@ -6,8 +6,19 @@ body {
 .top-buttons {
   margin-top: 10px; }
 
+li {
+  float: right;
+  clear: both;
+  list-style: none; }
+
+.navbar {
+  background-color: lightblue; }
+
 #form-container {
   padding: 0 25%; }
+
+.container {
+  margin: 0 auto; }
 
 .contact_container {
   background-color: lightblue;

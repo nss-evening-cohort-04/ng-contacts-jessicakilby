@@ -12,6 +12,19 @@
 </head>
 <body ng-app="ContactApp">
 
+	<nav class="navbar navbar-default" ng-controller="NavCtrl">
+		<div class="navbar-header">
+			<a href="#" title="" class="navbar-brand" ng-click="navHomeLink()">Contact App</a>
+		</div>
+		<div class="right-links">
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right" ng-repeat="navLink in navLinks">
+					<li><a href="#" ng-click="navLinkClick()">{{navLink.title}}</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
 	<div ng-controller="contactCtrl">
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3 top-buttons">
@@ -20,7 +33,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">
+			<div class="col-sm-6 col-sm-offset-1">
 				<div ng-show="showListView">
 					<h3>My Contacts</h3>
 					<div class="container" >

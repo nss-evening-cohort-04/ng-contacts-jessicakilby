@@ -8,13 +8,25 @@ body {
 .top-buttons {
 	margin-top: 10px;
 }
+//Nav bar =========================================
+li {
+	float: right;
+	clear: both;
+	list-style: none;
+}
+.navbar{
+	background-color: lightblue;
+}
 
 //Add New Contact View ================================
 #form-container {
 	padding: 0 25%;
 }
 
-//All Contacts View =====================================
+//All Contacts View ===================================
+.container {
+	margin: 0 auto;
+}
 .contact_container{
 	background-color: lightblue;
 	border: 1px solid black;
