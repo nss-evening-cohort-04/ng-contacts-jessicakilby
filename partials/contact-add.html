@@ -1,0 +1,12 @@
+
+<h3>Add Contact</h3>
+
+<form>
+	<input class="form-control" type="text" id="name" placeholder="Name" ng-model="newContact.name">
+	<input class="form-control" type="text" id="phone" placeholder="Phone" ng-model="newContact.phone">
+	<input class="form-control" type="text" id="address" placeholder="Address" ng-model="newContact.address">
+	<input class="form-control" type="text" id="email" placeholder="Email" ng-model="newContact.email">
+	<button type="submit" class="btn btn-success" id="submit-contact" ng-click="submitNewContact()">Submit New Contact</button>
+</form>
+
+<!-- ng-click="submitNewContact()" in partials/contact-add.html -->

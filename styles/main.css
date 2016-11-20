@@ -3,9 +3,6 @@ body {
   body h1, body h3 {
     text-align: center; }
 
-.top-buttons {
-  margin-top: 10px; }
-
 li {
   float: right;
   clear: both;
@@ -16,6 +13,10 @@ li {
 
 #form-container {
   padding: 0 25%; }
+
+.editView {
+  border: 1px solid black;
+  background-color: lightblue; }
 
 .container {
   margin: 0 auto; }

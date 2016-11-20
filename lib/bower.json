@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "authors": [
-    "Zoe Ames <zoeames@gmail.com>", 
+    "Zoe Ames <zoeames@gmail.com>",
     "Jessica Kilby <jessicakilby@gmail.com>"
   ],
   "license": "MIT",
@@ -18,6 +18,7 @@
   "dependencies": {
     "jquery": "^3.1.1",
     "bootstrap": "^3.3.7",
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
   }
 }

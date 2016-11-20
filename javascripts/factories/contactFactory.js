@@ -34,20 +34,51 @@ contact.factory("contactFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	// var deleteContactsFB = function(){
-	// 	return $q((resolve, reject)=>{
-	// 		$http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts.json`)
-	// 		.success(function(deleteResponse){
-	// 			resolve(deleteResponse);
-	// 		}).error(function(deleteError){
-	// 			reject(deleteError);
-	// 		});
-	// 	});
-	// };
+	var deleteContactsFB = function(contactId){
+		return $q((resolve, reject)=>{
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`)
+			.success(function(deleteResponse){
+				resolve(deleteResponse);
+			}).error(function(deleteError){
+				reject(deleteError);
+			});
+		});
+	};
 
-	
+	var getSingleContact = function(contactId){
+		return $q((resolve, reject)=>{
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`)
+			.success(function(singleResponse){
+				resolve(singleResponse);
+			}).error(function(singleError){
+				reject(singleError);
+			});
+		});
+	};
 
-	return {getContactFB:getContactFB, postContacts}; //, deleteContactsFB
+	var editContact = function(editContact){
+		return $q((resolve, reject)=>{
+			$http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${editContact.id}.json`, JSON.stringify({
+				name: editContact.name,
+				phone: editContact.phone,
+				address: editContact.address,
+				email: editContact.email
+				})
+			).success(function(editResponse){
+				resolve(editResponse);
+			}).error(function(editError){
+				reject(editError);
+			});
+		});
+	};
+
+	return {
+		getContactFB: getContactFB, 
+		postContacts: postContacts, 
+		deleteContactsFB: deleteContactsFB,
+		getSingleContact: getSingleContact,
+		editContact: editContact
+	};
 });
 
 //Factory: ability to use other services (have dependencies), service initialization, delayed/lazy initialization
@@ -55,21 +86,3 @@ contact.factory("contactFactory", function($q, $http, FIREBASE_CONFIG){
 //$q instead of promise
 //$http instead of ajax request
 //.success instead of .then
-
-// 	return new Promise((resolve, reject)=>{
-	// 		$.ajax({
-	// 			method: 'GET',
-	// 			url: `${apiKeys.databaseURL}/items.json?orderBy="uid"&equalTo="${uid}"`
-	// 		}).then((response)=>{
-	// 			let items = [];
-	// 			Object.keys(response).forEach(function(key){
-	// 				response[key].id = key;
-	// 				items.push(response[key]);
-	// 			});
-
-	// 			resolve(items);
-	// 		}, (error)=>{
-	// 			reject(error);
-	// 		});
-	// 	});
-	// };

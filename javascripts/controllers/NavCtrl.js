@@ -2,16 +2,19 @@
 
 contact.controller("NavCtrl", function($scope){
 
-	$scope.navLinks = [{title:"link1"},{title:"link2"}];
-
-	$scope.navHomeLink = function(){
-		console.log("navigation brand clicked");
-	};
-	$scope.navLinkClick = function(){
-		console.log("navLink clicked");
-	};
-
-
+	$scope.navLinks = [
+		{
+			title:"Logout",
+			url:"#/logout"
+		},
+		{
+			title:"Add New Contact",
+			url:"#/contacts/add"	
+		},
+		{
+			title:"View All Contacts",
+			url:"#/contacts/list"
+		}
+	];
+	
 });
-
-//Need html nav bar setup for ng-controller="NavCtrl"

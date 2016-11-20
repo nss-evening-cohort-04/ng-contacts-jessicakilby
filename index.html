@@ -1,92 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>ng-contacts-jk</title>
-	<!-- font awesome -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<head>
+		<title>ng-contacts-jk</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!-- font awesome -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><!-- google-icon -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- bootstrap -->
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+	</head>
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<!-- bootstrap -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-</head>
-<body ng-app="ContactApp">
+	<body ng-app="ContactApp">
 
-	<nav class="navbar navbar-default" ng-controller="NavCtrl">
-		<div class="navbar-header">
-			<a href="#" title="" class="navbar-brand" ng-click="navHomeLink()">Contact App</a>
-		</div>
-		<div class="right-links">
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav navbar-right" ng-repeat="navLink in navLinks">
-					<li><a href="#" ng-click="navLinkClick()">{{navLink.title}}</a></li>
-				</ul>
+		<nav class="navbar navbar-default" ng-controller="NavCtrl">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">Contact App</a>
 			</div>
-		</div>
-	</nav>
 
-	<div ng-controller="contactCtrl">
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3 top-buttons">
-				<button class="btn btn-large col-sm-6 btn-primary" ng-click="allContactView()">All Contact View</button>
-				<button class="btn btn-large col-sm-6 btn-success" ng-click="addContactView()">Add New Contact View</button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-1">
-				<div ng-show="showListView">
-					<h3>My Contacts</h3>
-					<div class="container" >
-						<div class="contact_container" id="label">
-							<div class="name">Name</div>
-							<div class="phone">Phone</div>
-							<div class="address">Address</div>
-							<div class="email">Email</div>
-						</div>
-					</div>
-					<div class="container">
-						<div class="contact_container" ng-repeat="contact in contacts">
-							<div class="name">{{contact.name}}</div>
-							<div class="phone">{{contact.phone}}</div>
-							<div class="address">{{contact.address}}</div>
-							<div class="email">{{contact.email}}</div>
-							<div class="editDeleteButton">
-								<button class="edit btn btn-warning" ng-click="editContacts()"><i class="material-icons">edit</i></button>
-								<button class="delete btn btn-danger" ng-click="deleteContacts()"><i class="material-icons">delete</i></button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- name: newContact.name,
-				phone: newContact.phone,
-				address: newContact.address,
-				email: newContact.email -->
-
-				<div id="form-container" ng-show="!showListView">
-					<h3>Add Contact</h3>
-					<form>
-						<input class="form-control" type="text" id="name" placeholder="Name" ng-model="newContact.name">
-					    <input class="form-control" type="text" id="phone" placeholder="Phone" ng-model="newContact.phone">
-					    <input class="form-control" type="text" id="address" placeholder="Address" ng-model="newContact.address">
-					    <input class="form-control" type="text" id="email" placeholder="Email" ng-model="newContact.email">
-					    <button type="submit" class="btn btn-success" id="submit-contact" ng-click="submitNewContact()">Submit New Contact</button>
-					</form>
+			<div class="right-links">
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right" ng-repeat="navLink in navLinks">
+						<li><a href="{{navLink.url}}">{{navLink.title}}</a></li>
+					</ul>
 				</div>
 			</div>
+		</nav>
+
+		<div class="row">
+			<h1>My Contacts</h1>
+			<div class="col-sm-8 col-sm-offset-1" ng-view></div>
 		</div>
-	</div>
 
-	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script> <!-- firebase -->
-	<script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script> <!-- jquery -->
-	<script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> <!-- bootstrap -->
-	<script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script> <!-- angular -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script> <!-- firebase -->
+		<script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script> <!-- jquery -->
+		<script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> <!-- bootstrap -->
+		<script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script> <!-- angular -->
+		<script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script> <!-- angular-route -->
 
-	<script type="text/javascript" src="/javascripts/contact.js"></script>
-	<script type="text/javascript" src="/javascripts/contactConstants.js"></script>
-	<script type="text/javascript" src="/javascripts/contactConfig.js"></script>
-	<script type="text/javascript" src="/javascripts/factories/contactFactory.js"></script>
-	<script type="text/javascript" src="/javascripts/controllers/NavCtrl.js"></script>
-	<script type="text/javascript" src="/javascripts/controllers/contactCtrl.js"></script>
-</body>
+		<script src="/javascripts/contact.js"></script>
+		<script src="/javascripts/contactConstants.js"></script>
+		<script src="/javascripts/contactConfig.js"></script>
+		<script src="/javascripts/factories/contactFactory.js"></script>
+		<script src="/javascripts/controllers/NavCtrl.js"></script>
+		<script src="/javascripts/controllers/ContactListCtrl.js"></script>
+		<script src="/javascripts/controllers/ContactAddCtrl.js"></script>
+		<script src="/javascripts/controllers/ContactEditViewCtrl.js"></script>
+		<script src="/javascripts/controllers/ContactEditCtrl.js"></script>
+		
+	</body>
 </html>
