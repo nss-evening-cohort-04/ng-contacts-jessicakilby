@@ -33,7 +33,7 @@ contact.controller("AuthCtrl", function($scope, $location, $rootScope, AuthFacto
 		$scope.registerArea = true;
 	};
 	$scope.registerNewUser = function(registerUser){
-		AuthFactory.registrationEmail(registerUser).then(function(didRegister){
+		AuthFactory.registerWithEmail(registerUser).then(function(didRegister){
 			registerUser.uid = didRegister.uid;
 			return UserFactory.postUserFB(registerUser);
 		}).then(function(completeRegistration){

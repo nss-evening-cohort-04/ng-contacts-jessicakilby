@@ -10,21 +10,23 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject)=>{
 
 contact.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory){
 	firebase.initializeApp(FIREBASE_CONFIG);
+
 	$rootScope.$on("$routeChangeStart", function(event, currRoute, prevRoute){
 
 		let logged = AuthFactory.isAuthenticated();
-		let contactTo;
+		let appTo;
 
 		if(currRoute.originalPath){
-			contactTo = currRoute.originalPath.indexOf("/auth") !== -1;
+			appTo = currRoute.originalPath.indexOf("/auth") !== -1;
 		}
 
-		if(!contactTo && !logged) {
+		if(!appTo && !logged) {
 			event.preventDefault();
 			$location.path("/auth");
 		}
 
 	});
+
 });
 
 contact.config(function($routeProvider){

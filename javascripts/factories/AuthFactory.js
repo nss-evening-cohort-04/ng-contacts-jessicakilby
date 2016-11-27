@@ -26,7 +26,7 @@ contact.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG){
 		});
 	};
 
-	var registrationEmail = function(user){
+	var registerWithEmail = function(user){
 		return $q((resolve, reject) => {
 			firebase.auth().createUserWithEmailAndPassword(
 				user.email,
@@ -44,7 +44,7 @@ contact.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG){
 		getUser:getUser,
 		logout:logout,
 		authenticate:authenticate,
-		registrationEmail:registrationEmail
+		registerWithEmail:registerWithEmail
 	};
 
 });
