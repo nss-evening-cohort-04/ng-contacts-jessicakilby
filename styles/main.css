@@ -11,6 +11,12 @@ li {
 .navbar {
   background-color: lightblue; }
 
+.login-container,
+.register-container {
+  border: 3px solid black;
+  padding: 10px;
+  background-color: lightblue; }
+
 #form-container {
   padding: 0 25%; }
 

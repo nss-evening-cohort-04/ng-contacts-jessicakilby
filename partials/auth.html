@@ -1,0 +1,22 @@
+<div class="loginRegisterContainer col-sm-6 col-sm-offset-3" id="login-register-container">
+	<div class="row">
+		<button class="loginButton btn btn-info col-sm-6" ng-click="setLoginArea()">Sign-In</button>
+		<button class="registerButton btn btn-success col-sm-6" ng-click="setRegisterArea()">Registration</button>
+	</div>
+	<div class="row">
+		<form ng-show="loginArea" class="login-container">
+			<h3>Sign-In Form</h3>
+			<input class="form-control" type="email" id="inputEmail" placeholder="Email address" ng-model="login.email" required autofocus>
+			<input class="form-control" type="password" id="inputPassword" placeholder="Password" ng-model="login.password" required>
+			<button type="submit" class="btn btn-info" ng-click="loginOldUser(login)">Login</button>
+		</form>
+		<form ng-show="registerArea" class="register-container">
+			<h3>Registration Form</h3>
+			<input class="form-control" type="email" id="inputEmail" placeholder="Email address" ng-model="register.email" required autofocus>
+			<input class="form-control" type="password" id="inputPassword" placeholder="Password" ng-model="register.password" required>
+			<input class="form-control" type="username" id="inputUsername" placeholder="Username" ng-model="register.username" required>
+			<button type="submit" class="btn btn-success" ng-click="registerNewUser(register)">Register</button>
+		</form>
+	</div>
+</div>
+

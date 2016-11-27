@@ -1,22 +1,42 @@
 {
 	"contacts":{
 		"contact0": {
+			"id": 0,
 			"name": "Apple Pie",
 			"phone": "123-456-7890",
 			"address": "1234 Pie St. Dessert TN 37206",
-			"email": "applePie@a.com"
+			"email": "applePie@a.com",
+			"uid": ""
 		},
 		"contact1": {
+			"id": 1,
 			"name": "Blackberry Pie",
 			"phone": "123-456-7890",
 			"address": "1234 Pie St. Dessert TN 37206",
-			"email": "blackberryPie@a.com"
+			"email": "blackberryPie@a.com",
+			"uid": ""
 		},
 		"contact2": {
+			"id": 2,
 			"name": "Cherry Pie",
 			"phone": "123-456-7890",
 			"address": "1234 Pie St. Dessert TN 37206",
-			"email": "cherryPie@a.com"
+			"email": "cherryPie@a.com",
+			"uid": ""
+		}
+	},
+	"users": {
+		"user0": {
+			"uid": "",
+			"username": ""
+		},
+		"user1": {
+			"uid": "",
+			"username": ""
+		},
+		"user2": {
+			"uid": "",
+			"username": ""
 		}
 	}
 }
