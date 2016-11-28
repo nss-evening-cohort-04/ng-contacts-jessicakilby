@@ -1,11 +1,11 @@
 "use strict";
 
-contact.controller("ContactListCtrl", function($scope, contactFactory){
+contact.controller("ContactListCtrl", function($scope, $rootScope, contactFactory){
 
 	$scope.contacts = [];
 
 	var getContacts = function(){
-		contactFactory.getContactFB().then(function(contactsFB){
+		contactFactory.getContactFB($rootScope.user.uid).then(function(contactsFB){
 			console.log("contacts from fb", contactsFB);
 			$scope.contacts = contactsFB;
 		});
@@ -18,4 +18,11 @@ contact.controller("ContactListCtrl", function($scope, contactFactory){
 			getContacts();
 		});
 	};
+
+	$scope.inputChange = function(watchamacalit){
+		contactFactory.editContact(watchamacalit).then(function(response){
+
+		});
+	};
+
 });
