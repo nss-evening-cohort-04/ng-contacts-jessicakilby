@@ -24,8 +24,10 @@ li {
 }
 
 //Add New Contact View ================================
-#form-container {
+.form-container {
 	padding: 0 25%;
+	border: 1px solid black;
+	background-color: lightblue;
 }
 
 //Edit View ==========================================
@@ -37,15 +39,11 @@ li {
 
 //All Contacts View ===================================
 
-.container {
-	margin: 0 auto;
-}
 .contact_container{
 	background-color: lightblue;
 	border: 1px solid black;
 	border-radius: 20px;
 	padding: 5px;
-	width: 900px;
 	display: inline-block;
 }
 #label {

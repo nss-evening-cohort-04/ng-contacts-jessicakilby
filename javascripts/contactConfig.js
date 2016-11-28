@@ -35,17 +35,17 @@ contact.config(function($routeProvider){
 			templateUrl: "partials/auth.html",
 			controller: "AuthCtrl"
 		})
-		.when('/contacts/list', {
+		.when("/contacts/list", {
 			templateUrl: "partials/contact-list.html",
 			controller: "ContactListCtrl",
 			resolve: {isAuth} 
 		})
-		.when('/contacts/add', {
+		.when("/contacts/add", {
 			templateUrl: "partials/contact-add.html",
 			controller: "ContactAddCtrl",
 			resolve: {isAuth} 
 		})
-		.when('/contacts/editView/:id', {
+		.when("/contacts/editView/:id", {
 			templateUrl: "partials/contact-edit.html",
 			controller: "ContactEditViewCtrl",
 			resolve: {isAuth} 
@@ -60,5 +60,5 @@ contact.config(function($routeProvider){
 			controller: "AuthCtrl",
 			resolve: {isAuth}
 		})
-		.otherwise('/auth');
+		.otherwise("/auth");
 });

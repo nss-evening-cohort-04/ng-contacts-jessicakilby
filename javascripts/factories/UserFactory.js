@@ -8,9 +8,11 @@ contact.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 				uid: authData.uid,
 				username: authData.username
 				})
-			).success(function(postResponse){
+			)
+			.success(function(postResponse){
 				resolve(postResponse);
-			}).error(function(postError){
+			})
+			.error(function(postError){
 				reject(postError);
 			});
 		});
@@ -18,7 +20,7 @@ contact.factory("UserFactory", function($q, $http, FIREBASE_CONFIG){
 
 	var getUserFB = function(userId){
 		return $q((resolve, reject)=>{
-			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${userId}`)
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${userId}"`)
 			.success(function(response){
 				let users = [];
 				Object.keys(response).forEach(function(key){
